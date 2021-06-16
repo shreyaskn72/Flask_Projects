@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html>  
+   <body>  
+      <h3>Add new Patients</h3>  
+      <hr/>  
+        
+      {%- for category, message in get_flashed_messages(with_categories = true) %}  
+         <div class = "alert alert-danger">  
+            {{ message }}  
+         </div>  
+      {%- endfor %}  
+        
+      <form action = "{{ request.path }}" method = "post">  
+         <label for = "name">Name</label><br>  
+         <input type = "text" name = "name" placeholder = "Name" /><br>    
+           
+         <label for = "age">Age</label><br>  
+         <textarea name = "age" placeholder = "age"></textarea><br>  
+		 
+		 <label for = "blood_group">Blood_group</label><br>  
+         <input type = "text" name = "blood_group" placeholder = "blood_group" /><br>
+           
+         <label for = "infection">infection</label><br>  
+         <input type = "text" name = "infection" placeholder = "infection" /><br>  
+           
+         <input type = "submit" value = "Submit" />  
+      </form>  
+   </body>  
+</html>  

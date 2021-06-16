@@ -1,0 +1,39 @@
+<!DOCTYPE html>  
+<html lang = "en">  
+   <head><title>Home</title></head>  
+   <body>  
+      <h3>  
+         <a href = "{{ url_for('list_patients') }}">Patients Details</a>
+      </h3>  
+        
+      <hr/>  
+      {%- for message in get_flashed_messages() %}  
+         {{ message }}  
+      {%- endfor %}  
+          
+      <h3>Patients List</h3>  
+      <table border="2" padding = "5">  
+         <thead>  
+            <tr>  
+               <th>Name</th>  
+               <th>Age</th>  
+               <th>Blood_group</th>  
+               <th>infection</th>  
+            </tr>  
+         </thead>  
+  
+         <tbody>  
+            {% for patient in Patients %}  
+               <tr>  
+                  <td>{{ patient.name }}</td>  
+                  <td>{{ patient.age }}</td>  
+                  <td>{{ patient.blood_group }}</td>  
+                  <td>{{ patient.infection }}</td>  
+               </tr>  
+            {% endfor %}  
+         </tbody>  
+      </table>  
+      <br><br>  
+      <a href="{{ url_for('addPatients') }}">Add New Patients</a>  
+   </body>  
+</html>  
