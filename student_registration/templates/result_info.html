@@ -1,0 +1,15 @@
+<!doctype html>  
+<html>  
+   <body>  
+      <p><strong>Registration successful!</strong></p>
+      <p><strong>Your details are as below:</strong></p>	  
+      <table border = 1>  
+         {% for key, value in result.items() %}  
+            <tr>  
+               <th> {{ key }} </th>  
+               <td> {{ value }} </td>  
+            </tr>  
+         {% endfor %}  
+      </table>  
+   </body>  
+</html>
