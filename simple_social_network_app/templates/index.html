@@ -1,0 +1,12 @@
+<html>  
+   <body>  
+      <form action = "/" method = "post">  
+         <input placeholder = "Name" name = "name">
+         <input placeholder = "Post content" name = "content"> 		  
+         <input type = "submit" value = "submit">
+      </form>
+      {% for post in posts %}
+         <div>{{ post.name }}:{{ post.content }}</div>
+	  {% endfor %}
+   </body>
+</html>
